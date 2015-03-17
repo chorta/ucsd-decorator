@@ -42,7 +42,7 @@
 
     <section class="layout-title">
         <div class="layout-container">
-            <button class="menu btn-nav">
+            <button class="btn-nav">
                 <span class="sr-only">Toggle Navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -90,6 +90,7 @@
                 <ul class="navbar-sublist">
                     <li><a href="blank-slate.html">Blank Slate</a></li>
                     <li><a href="two-column.html">Two Columns</a></li>
+                    <li><a href="two-column-b.html">Two Columns B</a></li>
                     <li><a href="three-column.html">Three Columns</a></li>
                     <li><a href="form-a.html">Basic Form</a></li>
                 </ul>
@@ -141,7 +142,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//www.ucsd.edu/common/_emergency-broadcast/message.js"></script>
 
-<!-- build:js({app,.tmp}) scripts/nav.js -->
+<!-- build:js({app,.tmp}) scripts/base-min.js -->
 <script src="scripts/ucsd/nav.js"></script>
 <!-- endbuild -->
 
@@ -150,7 +151,6 @@
         $(document).ready(function () {
             initFooter("https://act.ucsd.edu/cwp/feedback/tool/cwo");
             initCopyright();
-            initLogout('http://www.ucsd.edu');
         });
     })(jQuery);
 </script>
@@ -172,13 +172,29 @@
     // ]]>
 </script>
 
-<!-- build:js({app,.tmp}) scripts/vendor.js -->
-<script src="scripts/vendor.js"></script>
+<!-- build:js scripts/vendor.js -->
+<script src="vendor/flexslider/jquery.flexslider.js"></script>
+<script src="vendor/fastclick/lib/fastclick.js"></script>
+<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+<script src="vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
 <!-- endbuild -->
 
-
-<!-- build:js({app,.tmp}) scripts/base-min.js -->
-<script src="scripts/base-min.js"></script>
+<!-- build:js({app,.tmp}) scripts/cms-min.js -->
+<script src="scripts/ucsd/copyright.js"></script>
+<script src="scripts/ucsd/footer.js"></script>
+<script src="scripts/ucsd/logout.js"></script>
+<script src="scripts/ucsd/flexslider-init.js"></script>
+<script src="scripts/ucsd/drawer.js"></script>
 <!-- endbuild -->
 
 <!-- Google Search -->
