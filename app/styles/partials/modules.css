@@ -15,14 +15,16 @@
  * ***************/
 .breadcrumbs-list {
   background-color: #fff;
-  list-style: none;
   margin-bottom: 0;
-  padding: 0; }
+  padding: 0 0 1em; }
   .breadcrumbs-list > li {
     color: #666;
     display: inline;
     font-size: 80%; }
 
+/* ***********************************************
+ * NAVBAR
+ * ***************/
 /* ***********************************************
  * SEARCH
  * ***************/
@@ -54,6 +56,9 @@
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap; }
+  @media only screen and (max-width: 768px) {
+    .title-header {
+      margin-top: 2em; } }
 
 .title-logo {
   float: right;
@@ -63,6 +68,12 @@
   text-indent: -999em;
   background: transparent url(../img/sprite_base.png) no-repeat;
   background-position: 0 -3px; }
+  @media only screen and (max-width: 768px) {
+    .title-logo {
+      float: none;
+      position: absolute;
+      left: 3%;
+      /* width is 94% but for one side is only half of 6% -> 3% */ } }
 
 /* ***********************************************
  * MAIN CONTENT SIDE NAV
@@ -88,7 +99,7 @@
       text-decoration: none; }
     .main-content-nav > ul li.active {
       background-color: #fff;
-      color: #D56A03; }
+      color: #d56a03; }
     .main-content-nav > ul li ul {
       margin: .4em 0 -.4em 1em;
       padding: 0; }
@@ -101,5 +112,9 @@
 /* ***********************************************
  * INPUT
  * ***************/
+.form-control {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  padding: 0.5em; }
 
 /*# sourceMappingURL=modules.css.map */

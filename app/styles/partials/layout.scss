@@ -19,14 +19,44 @@ html, body
   background: #fff;
 }
   /* container will have media queries for sizing*/
+
   .layout-container {
-    max-width: 1200px;
+    max-width: 960px;
+    width: 98%;
     margin: auto;
     overflow: hidden;
+
+    @media only screen and (max-width: $desktop-small) {
+      width: 94%;
+    }
+
+    @media only screen and (min-width: $full) {
+      max-width: 1200px;
+    }
   }
 
   .layout-header {
+    /* to incorporate new navbar button*/
+    background-color: #2b92b9;
     width: 100%;
+//
+//    for navbar integration purposes, don't use yet
+//    display: -ms-flexbox;
+//    display: -webkit-flex;
+//    display: flex;
+//
+//    -ms-flex-direction: row;
+//    -webkit-flex-direction: row;
+//    flex-direction: row;
+//
+//    position: relative;
+    @media only screen and (min-width: $minimum) {
+      height: 105px;
+    }
+
+    @media only screen and (min-width: $desktop-small) {
+      height: 78px;
+    }
   }
     .layout-login {
       background: #0B4A67;
@@ -35,8 +65,14 @@ html, body
       font-family: "Trebuchet MS", sans-serif;
 
       height: 78px;
+      width: 100%;
       background: #2b92b9;
       padding: 1.5em 0;
+
+      @media only screen and (max-width: 768px) {
+        padding: 1em 0;
+        height: 105px;
+      }
     }
 
   .layout-navbar {
@@ -64,7 +100,11 @@ html, body
     line-height: 1.5;
 
     > .layout-container {
-      background: transparent url(../img/sprite_base.png) right -74px no-repeat;
+      background: transparent url(img/sprite_base.png) right -74px no-repeat;
+
+      @media only screen and (max-width: $tablet) {
+        background: none;
+      }
     }
   }
 
@@ -137,13 +177,11 @@ nav
   &.active > a {
     border-bottom: #D56A03 solid 3px;
   }
-
-  :first-child {
-    border-left: solid 1px #C8CFD3;
-  }
 }
 
-
+.layout-navbar .navbar-list > li:first-child {
+  border-left: solid 1px #C8CFD3;
+}
 /* ***********************************************
 * MAIN
 * **************/
@@ -153,7 +191,7 @@ main
 }
   .main-section {
     line-height: 1.5;
-    padding: 1em 0 0 0;
+    padding: 0;
   }
     .main-section-content {
       padding-left: 1.5em;
