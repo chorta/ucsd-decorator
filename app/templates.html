@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="styles/bootstrap.css"/>
     <!-- endbuild -->
 
-    <!-- build:css(.tmp) styles/base-d45.css -->
-    <link rel="stylesheet" href="styles/base-d45.css"/>
+    <!-- build:css(.tmp) styles/base.css -->
+    <link rel="stylesheet" href="styles/base.css"/>
     <!-- endbuild -->
 
     <!-- build:css(.tmp) styles/ie-support.css -->
@@ -31,13 +31,26 @@
     <!-- build:js({app,.tmp}) scripts/modernizr.js -->
     <script src="vendor/modernizr/modernizr.js"></script>
     <!-- endbuild -->
+
+    <!--[if lt IE 9]>
+    <!-- build:js({app,.tmp}) scripts/respond.min.js -->
+    <script src="vendor/respond/dest/respond.min.js"></script>
+    <!-- endbuild -->
+    <link href="https://cdn.ucsd.edu/cms/decorator-4/scripts/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+    <link href="img/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+    <!-- build:js({app,.tmp}) scripts/respond-proxy.js -->
+    <script src="scripts/ucsd/respond-proxy.js"></script>
+    <!-- endbuild -->
+    <![endif]-->
+</head>
 </head>
 <body>
 <header class="layout-header">
-    <a class="sr-only" href="#">Skip to main content</a>
+    <a class="sr-only" href="#main-content">Skip to main content</a>
     <div id="uc-emergency"></div>
     <section class="layout-login">
-        <span class="login-content"></span>
+        <div class="layout-container">
+</div>
     </section>
 
     <section class="layout-title">
@@ -50,7 +63,7 @@
             </button>
 
             <a href="index.html" class="title-header">Decorator 4.5</a>
-            <a href="http://www.ucsd.edu" class="title-logo">UC San Diego</a>
+            <a href="https://www.ucsd.edu" class="title-logo">UC San Diego</a>
         </div>
     </section>
 </header>
@@ -59,14 +72,14 @@
     <div class="layout-container">
 
         <div class="search">
-            <button class="search-toggle">
+            <button class="search-toggle btn-default">
                 <span class="glyphicon glyphicon-search"></span><span class="caret"></span>
             </button>
 
             <div class="search-content">
                 <form action="http://act.ucsd.edu/cwp/tools/search-redir" method="get" id="cse-site-search">
                     <select class="search-scope" name="search-scope">
-                        <option selected="selected" value="cwo">This Site</option>
+                        <option selected="selected" value="cascade-cwp">This Site</option>
                         <option value="default_collection">All UCSD Sites</option>
                         <option value="faculty-staff">Faculty/Staff</option>
                     </select>
@@ -78,28 +91,40 @@
             </div>
         </div>
 
-        <ul class="navbar-list">
-            <li><a href="index.html">Home</a></li>
+       <ul class="navbar-list">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
             <li class="navbar-subnav active">
-                <a href="#">Templates</a>
+                <a href="templates.html">Templates</a>
                 <ul class="navbar-sublist">
                     <li><a href="blank-slate.html">Blank Slate</a></li>
                     <li><a href="two-column.html">Two Columns</a></li>
                     <li><a href="two-column-b.html">Two Columns B</a></li>
                     <li><a href="three-column.html">Three Columns</a></li>
                     <li><a href="form-a.html">Basic Form</a></li>
+                    <li><a href="homepage.html">Homepage</a></li>
+                    <li><a href="homepage-wide.html">Homepage Wide</a></li>
                 </ul>
             </li>
-            <li><a href="docs/index.html">Kitchen Sink</a></li>
+            <li class="navbar-subnav">
+                <a href="widgets.html">Widgets</a>
+                <ul class="navbar-sublist">
+                    <li><a href="widgets/fullcalendar.html">FullCalendar</a></li>
+                    <li><a href="widgets/datatable.html">DataTable</a></li>
+                    <li><a href="widgets/wizard.html">Wizard</a></li>
+                    <li><a href="widgets/maxchar.html">MaxChar</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
 </nav>
 
-<main class="layout-main" role="main">
+<main class="layout-main" id="main-content" role="main">
     <div class="layout-container">
         <ol class="breadcrumb breadcrumbs-list">
             <li><a href="index.html">HOME</a></li>
-            <li class="active"><a href="#">Templates</a></li>
+            <li class="active">Templates</li>
         </ol>
 
         <h1>Templates</h1>
@@ -108,10 +133,11 @@
             <ul>
                 <li><a href="blank-slate.html">Blank Slate</a></li>
                 <li><a href="two-column.html">Two Columns</a></li>
-                    <li><a href="two-column-b.html">Two Columns B</a></li>
                 <li><a href="two-column-b.html">Two Columns B</a></li>
                 <li><a href="three-column.html">Three Columns</a></li>
                 <li><a href="form-a.html">Basic Form</a></li>
+                <li><a href="homepage.html">Homepage</a></li>
+                <li><a href="homepage-wide.html">Homepage Wide</a></li>
             </ul>
         </section>
     </div>
@@ -126,31 +152,40 @@
         </article>
         <article>
             <span>
-                Copyright ©2014 Regents of the University of California. All rights reserved.
+                Copyright © <span class="footer-copyright-year"></span> Regents of the University of California. All rights reserved.
             </span>
         </article>
         <ul class="footer-links">
-            <li><a href="http://www.ucsd.edu/_about/legal/index.html">Terms &amp; Conditions</a></li>
-            <li><a href="http://act.ucsd.edu/cwp/feedback/tool/cwo">Feedback</a></li>
+            <li><a href="https://www.ucsd.edu/_about/legal/index.html">Terms &amp; Conditions</a></li>
+            <li><a href="https://act.ucsd.edu/cwp/feedback/tool/cwo">Feedback</a></li>
         </ul>
     </section>
 </footer>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//www.ucsd.edu/common/_emergency-broadcast/message.js"></script>
-<!-- build:js({app,.tmp}) scripts/nav.js -->
+<!-- build:js({app,.tmp}) scripts/jquery.min.js -->
+<script src="vendor/jquery/dist/jquery.min.js"></script>
+<!-- endbuild -->
+<script src="https://www.ucsd.edu/common/_emergency-broadcast/message.js"></script>
+<!-- build:js({app,.tmp}) scripts/base-min.js -->
 <script src="scripts/ucsd/nav.js"></script>
+<script src="scripts/ucsd/drawer.js"></script>
+<script src="scripts/ucsd/copyright.js"></script>
+<script src="scripts/ucsd/footer.js"></script>
+<script src="scripts/ucsd/logout.js"></script>
+<script src="scripts/ucsd/social.js"></script>
+<script src="scripts/ucsd/profile-template.js"></script>
 <!-- endbuild -->
 
-<script>
-    $(document).ready(function () {
-        initFooter("https://act.ucsd.edu/cwp/feedback/tool/cwo");
-        initCopyright();
-        initLogout('http://www.ucsd.edu');
-    });
+<script type="text/javascript">
+    (function ($) {
+        $(document).ready(function () {
+            initFooter("https://act.ucsd.edu/cwp/feedback/tool/cwo");
+            initCopyright();
+        });
+    })(jQuery);
 </script>
 
-<script>
+<script type="text/javascript">
     // <![CDATA[
     var _gaq = _gaq || [];
     _gaq.push(["_setAccount", "UA-XXXXXXX-X"]);
@@ -167,19 +202,27 @@
     // ]]>
 </script>
 
-<!-- build:js({app,.tmp}) scripts/vendor.js -->
-<script src="scripts/vendor.js"></script>
-<!-- endbuild -->
-
-
-<!-- build:js({app,.tmp}) scripts/base-min.js -->
-<script src="scripts/base-min.js"></script>
+<!-- build:js scripts/vendor.js -->
+<script src="vendor/flexslider/jquery.flexslider.js"></script>
+<script src="vendor/fastclick/lib/fastclick.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+<script src="vendor/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
 <!-- endbuild -->
 
 
 
 <!-- Google Search -->
-<script src="//www.google.com/jsapi"></script>
+<script src="https://www.google.com/jsapi"></script>
 <script>// <![CDATA[
 google.load('search', '1');
 google.setOnLoadCallback(function () {
@@ -189,7 +232,7 @@ google.setOnLoadCallback(function () {
             'cse-site-search');
 });
 // ]]></script>
-<script src="//www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
+<script src="https://www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script>
 
 </body>
 </html>
